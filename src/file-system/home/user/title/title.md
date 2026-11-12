@@ -1,6 +1,6 @@
 
 
-!(/images/profile.jpg?aspect=0.73&noflow=true&width=1.05)
+!(/images/profile-screen.png?aspect=1&noflow=true&width=0.5&x=1.1)
 
 
 ##   Hi there,

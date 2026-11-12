@@ -43,7 +43,11 @@ const h3Font: FontInfo = (function () {
   return { font: undefined, size, height, width, leading, tracking };
 })();
 
-declare const screenWidth: number;
+// Width of the virtual terminal's text area in world units. The render
+// camera spans x = -0.1 → 1.496, so 1.4 leaves an even 0.1 margin each side.
+// (Previously injected as a global by an external CDN script; defined
+// locally so the site has no third-party runtime dependency.)
+const screenWidth = 1.4;
 
 const paragraphFont: FontInfo = (function () {
   const size = 0.0275;
@@ -678,12 +682,21 @@ export default function ScreenTextEngine(
       new THREE.MeshBasicMaterial({ color: 0x000000 })
     );
 
-    imageFrame.position.set(1.4 / 2, -height * 0.5 - charNextLoc.y, -0.02);
+    // Optional "x" param = horizontal centre of the image (default: centred).
+    const xParam = parseFloat(params.get("x") ?? "");
+    const x = Number.isNaN(xParam) ? screenWidth / 2 : xParam;
+
+    imageFrame.position.set(x, -height * 0.5 - charNextLoc.y, -0.02);
     if (!params.get("noflow")) charNextLoc.y += height;
     rootGroup.add(imageFrame);
 
     const textureLoader = new THREE.TextureLoader();
-    textureLoader.load(url, (tex) => {
+    // Root-relative paths ("/images/x.jpg") must include the deploy base
+    // (e.g. "/1797_Junaid_Portfolio/") or they 404 on GitHub Pages.
+    const resolvedUrl = url.startsWith("/")
+      ? import.meta.env.BASE_URL + url.slice(1)
+      : url;
+    textureLoader.load(resolvedUrl, (tex) => {
       tex.magFilter = THREE.NearestFilter;
       imageFrame.material = new THREE.MeshBasicMaterial({ map: tex });
     });
