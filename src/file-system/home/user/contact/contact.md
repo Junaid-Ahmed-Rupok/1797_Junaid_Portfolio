@@ -3,6 +3,9 @@
 
 
 # Contact
+### Based in Dhaka, Bangladesh
+### Open to Ph.D. opportunities (Fall 2027)
+
 ## Reach out via*email*
 
 junaidahmedrupok@gmail.com

@@ -5,7 +5,7 @@
     <title>Sarder Junaid Ahmed – ML Researcher & Data Scientist</title>
     <meta
       name="description"
-      content="My name is Sarder Junaid Ahmed. I'm an ML researcher and data scientist working on Causal Machine Learning and Trustworthy AI, applied to criminal justice, environmental governance and healthcare."
+      content="My name is Sarder Junaid Ahmed. I'm an ML researcher working on Causal Machine Learning and Trustworthy AI: fairness, robustness, interpretability and reproducibility, applied to criminal justice, environmental governance and healthcare."
     />
 
     <link rel="icon" type="image/png" href="%BASE_URL%icon/32x32.png" />
@@ -35,7 +35,7 @@
     <meta property="og:image" content="https://junaid-ahmed-rupok.github.io/1797_Junaid_Portfolio/icon/og-img1.png" />
     <meta
       name="og:description"
-      content="My name is Sarder Junaid Ahmed. I'm an ML researcher and data scientist working on Causal Machine Learning and Trustworthy AI, applied to criminal justice, environmental governance and healthcare."
+      content="My name is Sarder Junaid Ahmed. I'm an ML researcher working on Causal Machine Learning and Trustworthy AI: fairness, robustness, interpretability and reproducibility, applied to criminal justice, environmental governance and healthcare."
     />
     <link rel="manifest" href="%BASE_URL%manifest.json" />
     <script type="module" src="/src/main.ts"></script>
@@ -123,28 +123,79 @@
       <section>
         <h1 id="aboutMe">Hi there</h1>
         <p>
-          My name is Sarder Junaid Ahmed. I'm an ML researcher and data
-          scientist working on Causal Machine Learning and Trustworthy AI —
-          building systems that reason about cause and effect while staying
-          fair, robust, interpretable and reproducible, applied to domains
-          like criminal justice, environmental governance and healthcare.
+          My name is Sarder Junaid Ahmed. I'm an ML researcher developing
+          principled methods for Causal Machine Learning and Trustworthy AI —
+          building systems that reason about cause and effect while ensuring
+          fairness, robustness, interpretability and reproducibility, across
+          domains including criminal justice, environmental governance and
+          healthcare.
         </p>
         <p>
-          I hold a B.Sc. in Computer Science & Engineering from Rajshahi
-          University of Engineering & Technology (RUET), and currently work
-          as a Research Assistant at the Center for Artificial Intelligence
-          and Robotics (CAIR), Southeast University, and as a Researcher at
-          Royal Scientific Publications.
+          I'm a Research Assistant at the Center for Artificial Intelligence
+          and Robotics (CAIR), Southeast University, Dhaka. I hold a B.Sc. in
+          Computer Science &amp; Engineering from Rajshahi University of
+          Engineering &amp; Technology (RUET), and previously served as Senior
+          Researcher and Executive Committee Member at RUET's Young Learners'
+          Research Lab.
         </p>
         <p>
-          Below are details of some of the research software and projects
-          I've built, alongside a look at my published research.
+          My work so far includes 1 journal article, 11 refereed conference
+          papers (two with best paper awards), 2 conference abstracts, an
+          invited Springer book chapter and 3 manuscripts under review. Below
+          are some of the research software and projects I've built.
         </p>
       </section>
 
       <section>
         <h1 id="projects">Projects</h1>
         <hr />
+        <h2>A-ICF</h2>
+        <h3>2026</h3>
+        <ul class="skills">
+          <li>Python</li>
+          <li>PyTorch</li>
+          <li>Causal Fairness</li>
+          <li>Clinical ML</li>
+        </ul>
+        <p>
+          Amortized Invariant Causal Fairness Framework. A five-phase causal
+          fairness auditing framework combining causal-structure discovery,
+          invariant representation learning (DCEVAE), path-specific
+          fairness optimization and a causal decomposition of outcome
+          disparity (TV = SE + IE &minus; DE) for clinical ML. Achieved
+          near-perfect group fairness (Equalized Odds Difference &le; 0.055) on
+          two clinical datasets (N = 101,766 and N = 4,240), and showed that
+          disparities are driven mainly by spurious/confounding pathways
+          (SE = 0.110 for Framingham) rather than a large direct effect
+          (DE = 0.055). Accepted at IEEE OMLET 2026.
+        </p>
+        <p>
+          <a href="https://github.com/Junaid-Ahmed-Rupok/A-ICF-Amortized-Invariant-Causal-Fairness" target="_blank">GitHub</a>
+        </p>
+        <hr />
+
+        <h2>DeepEnMap</h2>
+        <h3>2026</h3>
+        <ul class="skills">
+          <li>Python</li>
+          <li>TensorFlow</li>
+          <li>Multi-Modal DL</li>
+          <li>Grad-CAM</li>
+        </ul>
+        <p>
+          Multi-Modal Ordinal Energy Poverty Risk Mapping. Fuses satellite
+          imagery (CNN branch) with demographic data (dense branch) to predict
+          ordinal energy poverty risk, with a custom ordinal-aware loss that
+          penalizes distant misclassifications more heavily. Reached 91.66%
+          accuracy and 0.9102 macro F1; the demographic branch adds under 0.1%
+          compute while improving accuracy by 5.7% over image-only. Accepted
+          at IEMIS 2026 (Springer LNNS).
+        </p>
+        <p>
+          <a href="https://github.com/Junaid-Ahmed-Rupok/DeepEnMap" target="_blank">GitHub</a>
+        </p>
+        <hr />
+
         <h2>ReproHub</h2>
         <h3>2024–25</h3>
         <ul class="skills">
@@ -214,19 +265,19 @@
         </p>
         <hr />
 
-        <h2>Research Highlights</h2>
-        <h3>2024–26</h3>
+        <h2>Publications &amp; Awards</h2>
+        <h3>2025–26</h3>
         <ul class="skills">
           <li>Causal ML</li>
           <li>Fairness</li>
           <li>Trustworthy AI</li>
         </ul>
         <p>
-          15+ papers across journals, refereed conferences, book chapters and
-          preprints, spanning fairness-aware classification, causal
-          discovery, uncertainty quantification and reproducible research
-          infrastructure — including a 1st Best Paper Award at SPECTRA 2026
-          and a Best Research Paper Award at APMEE 2025.
+          1 journal article, 11 refereed conference papers, 2 conference
+          abstracts, an invited Springer book chapter and 3 manuscripts under
+          review — spanning causal fairness, conformal prediction, Bayesian
+          optimization and reproducible research — including a 1st Best Paper
+          Award at SPECTRA 2026 and a Best Research Paper Award at APMEE 2025.
         </p>
         <button
           class="collapse-btn btn"
@@ -238,21 +289,35 @@
         <div class="collapse-body">
           <p>
             • CF-EGAT: A Causal Fairness-Aware Equity Graph Attention Network
-            — SPECTRA 2026, <b>1st Best Paper Award</b><br />
+            for Country-Level Environmental Livability Classification —
+            SPECTRA 2026, <b>1st Best Paper Award</b><br />
             • Multi-Dimensional Statistical Similarity for Governance
-            Classification — APMEE 2025, <b>Best Research Paper Award</b
-            ><br />
+            Classification — APMEE 2025, <b>Best Research Paper Award</b><br />
             • Machine Learning for Crime Classification: A Fairness-Aware
-            Approach to Class Imbalance — Journal of Machine Learning
-            Applications<br />
-            • DeepEnMap, RMA-BO, and several manuscripts under review at IEEE
-            and Springer venues, plus TMLR (Q1)
+            Approach to Class Imbalance —
+            <a href="https://doi.org/10.61577/jmla.2026.100002" target="_blank">J. Mach. Learn. Appl. 2(1), 2026</a><br />
+            • Auditing, Not Predicting: A Causal Bias-Decomposition Framework
+            for Clinical Fairness (A-ICF) — IEEE OMLET 2026<br />
+            • FAI: Feature-Wise Adaptive Imputation — ICISET 2026 (oral,
+            ~27% acceptance)<br />
+            • DeepEnMap and Segmentation-Guided Diffusion for Mammography
+            Synthesis — IEMIS 2026, Springer LNNS<br />
+            • CIDR and CalForget (conformal influence methods) — IEEE CSDE
+            2026<br />
+            • Bootstrap-Retrained SHAP with Pareto Counterfactuals, and
+            Fairness-Aware Crime Classification — IEEE SPICSCON 2026<br />
+            • RMA-BO: Regret-Minimizing Adaptive Bayesian Optimization —
+            SPECTRA 2026<br />
+            • Identification-Aware Selective Prediction — ISRC 2026 (oral,
+            ~20% acceptance)<br />
+            • Under review: DemocracyGuard (TMLR), ANCI (ICRPSET 2026), and an
+            invited Springer book chapter
           </p>
         </div>
         <hr />
         <p>
-          This represents just a small selection of the projects and
-          research I've worked on. Get in touch for a full CV.
+          Type <b>show -all</b> in the terminal above for the full list of
+          publications, experience and awards, or get in touch for a full CV.
         </p>
       </section>
 
@@ -266,6 +331,10 @@
           or on
           <a href="https://www.linkedin.com/in/sarder-junaid-ahmed-059b68240/"
             ><u><b>LinkedIn</b></u></a
+          >
+          and
+          <a href="https://github.com/Junaid-Ahmed-Rupok"
+            ><u><b>GitHub</b></u></a
           >
         </p>
       </section>

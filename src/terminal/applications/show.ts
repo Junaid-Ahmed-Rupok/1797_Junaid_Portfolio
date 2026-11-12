@@ -25,26 +25,29 @@ export default function show(
       const files = fileSystem.goHome().at(-1);
       if (!files) return;
 
-      const showAll = (p: (FolderBash | FileBash)[]) => {
-        if (!p) return;
-        
-        p.forEach((e) => {
-          if (e.name === "title") return;
-
-          if (e.name === "projects") {
-            allStr += "\n\n\n\n# Projects";
-          }
-
-          if (e.name.match(".md")) {
-            allStr += (e as any as FileBash).data;
-            return;
-          }
-
-          showAll((e as any).children);
+      // Sections in reading order; any other folder is appended after them.
+      const order = ["about", "experience", "publications", "projects", "awards", "contact"];
+      const folders = (files as FolderBash).children
+        .filter((e): e is FolderBash => "children" in e && e.name !== "title")
+        .sort((a, b) => {
+          const ia = order.indexOf(a.name), ib = order.indexOf(b.name);
+          return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
         });
+
+      const collect = (p: (FolderBash | FileBash)[]) => {
+        [...p]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .forEach((e) => {
+            if ("data" in e) {
+              if (e.name.endsWith(".md")) allStr += e.data;
+            } else collect(e.children);
+          });
       };
 
-      showAll(files.children);
+      folders.forEach((folder) => {
+        if (folder.name === "projects") allStr += "\n\n\n\n# Projects";
+        collect(folder.children);
+      });
 
       print(allStr, true);
 
