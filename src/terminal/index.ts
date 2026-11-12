@@ -75,6 +75,9 @@ export default function Terminal(screenTextEngine: {
       textarea.focus();
 
       if (e.key.length === 1) {
+        // We insert the character ourselves; stop the browser from also
+        // typing it into the now-focused textarea (doubled first letter).
+        e.preventDefault();
         textarea.value =
           textarea.value.slice(0, lastSelection) +
           e.key +
