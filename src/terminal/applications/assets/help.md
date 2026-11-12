@@ -15,6 +15,9 @@
 
 ### Tip: try typing "show -all"
 
+### Folders: about, experience, publications,
+### projects, awards, contact
+
 
 ## All commands
 ### JSH, version 1.0.0 
